@@ -23,7 +23,7 @@ class QueOnda < Sinatra::Base
   end
 
   post '/' do
-    user = User.create(email: params[:email], username: params[:username], password: params[:password], password_confirm: params[:password_confirm])
+    user = User.create(email: params[:email], username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation])
     if user.save
       session[:user_id] = user.id
       "Welcome #{user.username}"

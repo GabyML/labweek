@@ -7,15 +7,13 @@ Given(/^I visit the sign up page$/) do
 end
 
 Given(/^there is already a user with username "([^"]*)"$/) do |arg1|
-  user = User.new
-  user2 = User.new
-  user.username = arg1
-  user2.username = arg1
-  user.save
-  user2.save
-
-
+  user = User.create(email: 'sally@email.com', username: arg1, password: '1234', password_confirmation: '1234')
 end
+
+Given(/^there is already a user with email "([^"]*)"$/) do |arg1|
+  user = User.create(email: arg1, username: 'Sally', password: '1234', password_confirmation: '1234')
+end
+
 
 When(/^I click the "([^"]*)" button$/) do |arg1|
   click_on arg1

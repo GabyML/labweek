@@ -6,5 +6,4 @@ feature 'Create user' do
 		user = build :user
 		expect{ sign_up(user)}.to change(User, :count).by(1)		
 	end
-
 end
