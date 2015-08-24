@@ -41,6 +41,16 @@ class QueOnda < Sinatra::Base
     flash[:notice] = "Bye, loser"
   end
 
+  post '/sessions/new' do
+    user = User.authenticate(params[:return_username], params[:return_password])
+      if user
+        session[:user_id] = user.id
+      else
+        flash[:errors] = ["The username or password is incorrect!!!!!!!"]
+      end
+        redirect '/'
+    end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

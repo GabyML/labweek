@@ -12,7 +12,10 @@
         <input type='submit' value='Log Out'>
       </form>
     <% else %>
-      <form method='post' action='/'>
+      <form action="/users/new" method="get">
+        <input type="submit" value="Sign Up">
+      </form>
+      <form method='post' action='/sessions/new'>
         <input type='text' name='return_username' placeholder='here is where name go'>
         <input type='password' name='return_password' placeholder='here is where password go'>
         <input type='submit' value='Log In'>
