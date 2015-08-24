@@ -16,7 +16,10 @@ end
 
 Given(/^I am logged in$/) do
   user = User.create(email: 'sally@email.com', username: 'Sally', password: '1234', password_confirmation: '1234')
-  session[:user_id] = user.id
+  visit '/'
+  fill_in 'return_username', with: 'Sally'
+  fill_in 'return_password', with: '1234'
+  click_on 'Log In'
 end
 
 Given(/^I have an account with username "([^"]*)" and password "([^"]*)"$/) do |arg1, arg2|
