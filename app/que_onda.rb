@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './data_mapper_setup'
 
 class QueOnda < Sinatra::Base
   get '/' do
@@ -10,7 +11,8 @@ class QueOnda < Sinatra::Base
   end
 
   post '/' do
-    
+    user = User.create(email: params[:email], username: params[:username], password: params[:password], password_confirm: params[:password_confirm])
+    "Welcome #{user.username}"
   end
 
   # start the server if ruby file executed directly
