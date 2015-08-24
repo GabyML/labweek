@@ -7,6 +7,16 @@
   <body>
     <% if current_user %>
       Welcome, <%= current_user.username %>
+      <form method='post' action='/'>
+        <input type='hidden' name='_method' value='delete'>
+        <input type='submit' value='Log Out'>
+      </form>
+    <% else %>
+      <form method='post' action='/'>
+        <input type='text' name='return_username' placeholder='here is where name go'>
+        <input type='password' name='return_password' placeholder='here is where password go'>
+        <input type='submit' value='Log In'>
+      </form>
     <% end %>
     <% if flash[:errors] && !flash[:errors].empty? %>
       <ul id='errors'>

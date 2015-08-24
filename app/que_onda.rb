@@ -6,6 +6,8 @@ class QueOnda < Sinatra::Base
   register Sinatra::Flash
   enable :sessions
   set :session_secret, 'instagram for music'
+  use Rack::MethodOverride
+
 
   helpers do
     def current_user
@@ -26,11 +28,17 @@ class QueOnda < Sinatra::Base
     user = User.create(email: params[:email], username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation])
     if user.save
       session[:user_id] = user.id
-      "Welcome #{user.username}"
+      erb :index
     else
       flash.now[:errors] = user.errors.full_messages
       erb :'/users/new'
     end
+  end
+
+
+  delete '/' do
+    session[:user_id] = nil
+    flash[:notice] = "Bye, loser"
   end
 
   # start the server if ruby file executed directly

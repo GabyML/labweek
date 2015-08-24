@@ -14,6 +14,15 @@ Given(/^there is already a user with email "([^"]*)"$/) do |arg1|
   user = User.create(email: arg1, username: 'Sally', password: '1234', password_confirmation: '1234')
 end
 
+Given(/^I am logged in$/) do
+  user = User.create(email: 'sally@email.com', username: 'Sally', password: '1234', password_confirmation: '1234')
+  session[:user_id] = user.id
+end
+
+Given(/^I have an account with username "([^"]*)" and password "([^"]*)"$/) do |arg1, arg2|
+  user = User.create(email: 'dilbert@email.com', username: arg1, password: arg2, password_confirmation: arg2)
+end
+
 
 When(/^I click the "([^"]*)" button$/) do |arg1|
   click_on arg1

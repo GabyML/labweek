@@ -18,7 +18,7 @@ Feature: signing up to QueOnda
     And I fill in "password" with "1234"
     And I fill in "password_confirmation" with "1234"
     And I click the "Submit" button
-    Then I should see "Welcome Gerald"
+    Then I should see "Welcome, Gerald"
 
   Scenario: signing up with non matching password & confirmation
     Given I visit the sign up page
@@ -70,5 +70,3 @@ Feature: signing up to QueOnda
     And I fill in "password_confirmation" with "1234"
     And I click the "Submit" button
     Then I should see "Email is already taken"
-
-

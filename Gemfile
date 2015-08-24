@@ -10,6 +10,7 @@ ruby '2.2.2'
 	gem 'sinatra'
 	gem 'sinatra-flash'
 	gem 'sinatra-partial'
+	gem 'rack'
 
 group :test do
 
