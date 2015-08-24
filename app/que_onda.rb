@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class QueOnda < Sinatra::Base
   get '/' do
-    'Hello QueOnda!'
+    erb :index
   end
 
   # start the server if ruby file executed directly

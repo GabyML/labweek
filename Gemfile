@@ -12,6 +12,7 @@ ruby '2.2.2'
 group :test do
 
 	gem 'cucumber'
+	gem 'cucumber-sinatra'
 	gem 'rspec'
 	gem 'rspec-sinatra'
 	gem 'capybara'
