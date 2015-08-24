@@ -17,9 +17,17 @@ Feature: signing up to QueOnda
     And I click the "Submit" button
     Then I should see "Welcome Bob"
 
-  Scenario: signing up with matching password & confirmation
+  Scenario: signing up with non matching password & confirmation
     Given I visit the sign up page
     When I fill in "password" with "1234"
     And I fill in "password_confirm" with "12345"
     And I click the "Submit" button
     Then I should see "Password does not match the confirmation"
+
+  Scenario: signing up with a username that's taken
+    Given there is already a user with username "Sally"
+    And I visit the sign up page
+    When I fill in "username" with "Sally"
+    And I click the "Submit" button
+    Then I should see "Username already taken [or something, whatever datamapper says]"
+    
