@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/flash'
 require './data_mapper_setup'
+require 'byebug'
 
 class QueOnda < Sinatra::Base
   register Sinatra::Flash
@@ -17,6 +18,7 @@ class QueOnda < Sinatra::Base
 
 
   get '/' do
+    @ondas = Onda.all
     erb :index
   end
 
@@ -52,7 +54,15 @@ class QueOnda < Sinatra::Base
     end
 
   post '/onda/new' do
-    onda = Onda.create(link: params[:link], message: params[:message])
+    onda = Onda.new(link: params[:link], message: params[:message])
+    tags = params[:tag].split(" ")
+    tags.each do |tag|
+      tag = Tag.create(name: tag)
+      onda.tags << tag
+    end
+    onda.save
+    byebug
+    redirect '/'
   end
 
   # start the server if ruby file executed directly

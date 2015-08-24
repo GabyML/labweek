@@ -4,3 +4,16 @@
   <input type="text" name="tag">
   <button type="submit" value="post">
 </form>
+
+
+<ul>
+<% if @ondas %>
+  <% @ondas.each do |onda| %>
+    <li>
+      Canto: <%= onda.link %>
+      Why are you sharing this, m8? <%= onda.message %>
+      Genres: <%= onda.tags %>
+    </li>
+  <% end %>
+<% end %>
+</ul>
