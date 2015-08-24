@@ -13,9 +13,9 @@ Feature: signing up to QueOnda
 
   Scenario: completing signup
     Given I visit the sign up page
-    When I fill in "username" with "Bob"
+    When I fill in "username" with "Gerald"
     And I click the "Submit" button
-    Then I should see "Welcome Bob"
+    Then I should see "Welcome Gerald"
 
   Scenario: signing up with non matching password & confirmation
     Given I visit the sign up page
@@ -29,5 +29,5 @@ Feature: signing up to QueOnda
     And I visit the sign up page
     When I fill in "username" with "Sally"
     And I click the "Submit" button
-    Then I should see "Username already taken [or something, whatever datamapper says]"
-    
+    Then I should see "Username is already taken"
+
