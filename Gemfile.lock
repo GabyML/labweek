@@ -27,6 +27,8 @@ GEM
       multi_test (>= 0.1.2)
     cucumber-core (1.2.0)
       gherkin (~> 2.12.0)
+    cucumber-sinatra (0.5.0)
+      templater (>= 1.0.0)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)
       dm-constraints (~> 1.2.0)
@@ -142,6 +144,7 @@ DEPENDENCIES
   bcrypt
   capybara
   cucumber
+  cucumber-sinatra
   data_mapper
   database_cleaner
   dm-postgres-adapter

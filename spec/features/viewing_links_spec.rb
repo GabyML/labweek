@@ -1,1 +1,0 @@
-viewing_links_spec.rb
