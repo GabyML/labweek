@@ -150,6 +150,7 @@ DEPENDENCIES
   dm-postgres-adapter
   dm-transactions
   factory_girl
+  rack
   rspec
   rspec-sinatra
   sinatra
