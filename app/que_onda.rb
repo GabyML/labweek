@@ -51,6 +51,10 @@ class QueOnda < Sinatra::Base
         redirect '/'
     end
 
+  post '/onda/new' do
+    onda = Onda.create(link: params[:link], message: params[:message])
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

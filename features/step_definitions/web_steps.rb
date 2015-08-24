@@ -26,6 +26,9 @@ Given(/^I have an account with username "([^"]*)" and password "([^"]*)"$/) do |
   user = User.create(email: 'dilbert@email.com', username: arg1, password: arg2, password_confirmation: arg2)
 end
 
+Given(/^I am on the index page$/) do
+  visit '/'
+end
 
 When(/^I click the "([^"]*)" button$/) do |arg1|
   click_on arg1
@@ -35,6 +38,17 @@ When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
   fill_in arg1, with: arg2
 end
 
+When(/^I make a Onda$/) do
+  fill_in 'link', with: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+  fill_in 'message', with: 'My Onda'
+  fill_in 'tag', with: '#NeverGonnaGiveYouUp'
+  click_on 'post' 
+end
+
 Then(/^I should see "([^"]*)"$/) do |arg1|
   expect(page).to have_content(arg1)
+end
+
+Then(/^I can see a Onda$/) do
+  expect(page).to have_content('My Onda')
 end
