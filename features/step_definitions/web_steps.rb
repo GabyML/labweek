@@ -6,6 +6,11 @@ Given(/^I visit the sign up page$/) do
   visit '/users/new'
 end
 
+Given(/^there is already a user with username "([^"]*)"$/) do |arg1|
+  user = User.create
+  user.username = arg1
+end
+
 When(/^I click the "([^"]*)" button$/) do |arg1|
   click_on arg1
 end
