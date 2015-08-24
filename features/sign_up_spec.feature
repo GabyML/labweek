@@ -16,3 +16,10 @@ Feature: signing up to QueOnda
     When I fill in "username" with "Bob"
     And I click the "Submit" button
     Then I should see "Welcome Bob"
+
+  Scenario: signing up with matching password & confirmation
+    Given I visit the sign up page
+    When I fill in "password" with "1234"
+    And I fill in "password_confirm" with "12345"
+    And I click the "Submit" button
+    Then I should see "Password does not match the confirmation"
