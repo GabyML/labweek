@@ -15,3 +15,14 @@ Feature: Password reset
     When I fill in "email" with "dmitri@email.com"
     And I click the "Send recovery email" button
     Then I should see "Check dmitri@email.com"
+
+  Scenario: resetting password
+    Given there is already a user with email "sally@email.com"
+    And that I visit the reset password page with token "OOHRAGTNCKSAK"
+    When I fill in "new_password" with "winning"
+    And I fill in "new_password_confirmation" with "winning"
+    And I click the "Reset Password" button
+    And I fill in "return_username" with "Sally"
+    And I fill in "return_password" with "winning"
+    And I click the "Log In" button
+    Then I should see "Welcome, Sally"
