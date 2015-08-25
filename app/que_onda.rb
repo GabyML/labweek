@@ -54,6 +54,7 @@ class QueOnda < Sinatra::Base
     end
 
   post '/onda/new' do
+    # byebug
     onda = Onda.new(link: params[:link], message: params[:message])
     tags = params[:tag].split(" ")
     tags.each do |tag|
@@ -61,7 +62,6 @@ class QueOnda < Sinatra::Base
       onda.tags << tag
     end
     onda.save
-    byebug
     redirect '/'
   end
 
