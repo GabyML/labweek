@@ -2,28 +2,39 @@
 <html>
   <head>
     <title>Que Onda</title>
+    <link rel="stylesheet" href ="/normalise.css" type='text/css'>
+    <link rel="stylesheet" href ="/styles.css" type='text/css'>
   </head>
 
   <body>
-    <% if current_user %>
-      Welcome, <%= current_user.username %>
-      <form method='post' action='/'>
-        <input type='hidden' name='_method' value='delete'>
-        <input type='submit' value='Log Out'>
-      </form>
-    <% else %>
-      <form action="/users/new" method="get">
-        <input type="submit" value="Sign Up">
-      </form>
-      <form method='post' action='/sessions/new'>
-        <input type='text' name='return_username' placeholder='here is where name go'>
-        <input type='password' name='return_password' placeholder='here is where password go'>
-        <input type='submit' value='Log In'>
-      </form>
-      <form method='get' action='/users/request_password_reset'>
-        <input type='submit' value='Forgotten password?'>
-      </form>
-    <% end %>
+    <header>
+      <h1>QueOnda</h1>
+      <% if current_user %>
+        <section id="user_manage">
+          <section id="welcome">
+            Welcome, <%= current_user.username %>
+          </section>
+          <section id="log_out">
+            <form method='post' action='/'>
+              <input type='hidden' name='_method' value='delete'>
+              <input type='submit' value='Log Out'>
+            </form>
+          </section>
+        </section>
+      <% else %>
+        <form action="/users/new" method="get">
+          <input type="submit" value="Sign Up">
+        </form>
+        <form method='post' action='/sessions/new'>
+          <input type='text' name='return_username' placeholder='here is where name go'>
+          <input type='password' name='return_password' placeholder='here is where password go'>
+          <input type='submit' value='Log In'>
+        </form>
+        <form method='get' action='/users/request_password_reset'>
+          <input type='submit' value='Forgotten password?'>
+        </form>
+      <% end %>
+    </header>
     <% if flash[:notice] %>
       <div id = "notice">
         <%= flash[:notice] %>

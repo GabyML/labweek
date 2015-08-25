@@ -1,0 +1,26 @@
+header {
+  width:             100%;
+  height:            100px;
+  background-color:  #2F2A38;
+  color:             #D8CFAF;
+}
+
+
+li {
+  display: inline;
+}
+
+body {
+  background-color: #D2E1E4;
+}
+
+#user_manage {
+  float: right;
+  display: inline-block;
+}
+
+#welcome {
+}
+
+#log_out{
+}
