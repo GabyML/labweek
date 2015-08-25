@@ -76,10 +76,23 @@ class QueOnda < Sinatra::Base
       erb :'/users/request_password_reset'
   end
 
-  post '/password_reset' do
+  post '/password_reset_request' do
     flash[:notice] = "Check #{params[:email]}"
     user = User.first(email: params[:email])
     user.update(password_token: token_generator)
+    redirect '/'
+  end
+
+  get '/users/confirm_password_reset/:token' do
+    session[:token] = params[:token]
+    erb :'users/confirm_password_reset'
+  end
+
+  post '/password_reset' do
+    # byebug
+    user = User.first(password_token: session[:token])
+    user.password=(params[:new_password])
+    user.save
     redirect '/'
   end
 

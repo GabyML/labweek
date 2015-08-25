@@ -10,12 +10,16 @@ Given(/^I visit the request_password_reset page$/) do
   visit '/users/request_password_reset'
 end
 
+Given(/^that I visit the reset password page with token "([^"]*)"$/) do |arg1|
+  visit('/users/confirm_password_reset/' + arg1)
+end
+
 Given(/^there is already a user with username "([^"]*)"$/) do |arg1|
-  user = User.create(email: 'sally@email.com', username: arg1, password: '1234', password_confirmation: '1234')
+  user = User.create(email: 'sally@email.com', username: arg1, password: '1234', password_confirmation: '1234', password_token: "OOHRAGTNCKSAK")
 end
 
 Given(/^there is already a user with email "([^"]*)"$/) do |arg1|
-  user = User.create(email: arg1, username: 'Sally', password: '1234', password_confirmation: '1234')
+  user = User.create(email: arg1, username: 'Sally', password: '1234', password_confirmation: '1234', password_token: "OOHRAGTNCKSAK")
 end
 
 Given(/^I am logged in$/) do

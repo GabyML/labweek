@@ -6,13 +6,13 @@ class User
 	include DataMapper::Resource
 
 	attr_reader :password
-	attr_accessor :password_confirmation
+  attr_accessor :password_confirmation
 
 	property :id, Serial
 	property :email, String, required: true
 	property :username, String, required: true
-	property :password_digest, Text
-	property :password_token, Text
+	property :password_digest, Text, lazy: false
+	property :password_token, Text, lazy: false
 
   has n, :ondas
 
