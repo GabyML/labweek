@@ -7,6 +7,7 @@ require File.join(File.dirname(__FILE__), '..', '..', 'app/que_onda.rb')
 require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
+require 'tilt/erb'
 
 Capybara.app = QueOnda
 

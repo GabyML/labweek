@@ -9,3 +9,9 @@ Feature: viewing ondas
     When I make an Onda
     Then I can see an Onda
 
+  Scenario: can see which user created each Onda
+    Given Sally creates an Onda
+    And I am on the index page
+    Then I should see "Sally:"
+
+
