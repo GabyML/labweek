@@ -6,6 +6,10 @@ Given(/^I visit the sign up page$/) do
   visit '/users/new'
 end
 
+Given(/^I visit the request_password_reset page$/) do
+  visit '/users/request_password_reset'
+end
+
 Given(/^there is already a user with username "([^"]*)"$/) do |arg1|
   user = User.create(email: 'sally@email.com', username: arg1, password: '1234', password_confirmation: '1234')
 end

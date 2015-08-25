@@ -70,6 +70,15 @@ class QueOnda < Sinatra::Base
     redirect '/'
   end
 
+  get "/users/request_password_reset" do
+      erb :'/users/request_password_reset'
+  end
+
+  post '/password_reset' do
+    flash[:notice] = "Check #{params[:email]}"
+    redirect '/'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
