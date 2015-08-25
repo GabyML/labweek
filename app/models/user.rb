@@ -15,6 +15,8 @@ class User
 	# property :password, String
 	# property :password_confirm, String
 
+  has n, :ondas
+
 	validates_confirmation_of :password
     validates_uniqueness_of :username
     validates_uniqueness_of :email

@@ -55,17 +55,17 @@ class QueOnda < Sinatra::Base
     end
 
   post '/onda/new' do
-    # byebug
     if current_user == nil
       flash[:errors] = ["You must be logged in to post an Onda"]
     else
-      onda = Onda.new(link: params[:link], message: params[:message])
+      user = current_user
+      onda = Onda.create(link: params[:link], message: params[:message], user_id: user.id)
       tags = params[:tag].split(" ")
       tags.each do |tag|
         tag = Tag.create(name: tag)
         onda.tags << tag
       end
-      onda.save
+      user.ondas << onda
     end
     redirect '/'
   end
