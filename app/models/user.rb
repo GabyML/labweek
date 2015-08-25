@@ -12,8 +12,7 @@ class User
 	property :email, String, required: true
 	property :username, String, required: true
 	property :password_digest, Text
-	# property :password, String
-	# property :password_confirm, String
+	property :password_token, Text
 
   has n, :ondas
 
@@ -34,5 +33,9 @@ class User
     else
       nil
     end
+  end
+
+  def token_generator
+  	(0..20).map { (65 + rand(26)).chr }.join
   end
 end

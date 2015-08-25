@@ -9,7 +9,8 @@ Feature: Password reset
     Then I should see "Please enter your email address"
 
   Scenario: requesting password reset
-    Given that I am not logged in
+    Given there is already a user with email "dmitri@email.com"
+    And that I am not logged in
     And I visit the request_password_reset page
     When I fill in "email" with "dmitri@email.com"
     And I click the "Send recovery email" button

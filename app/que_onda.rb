@@ -2,12 +2,14 @@ require 'sinatra/base'
 require 'sinatra/flash'
 require './data_mapper_setup'
 require 'byebug'
+require './app/helper/sessionHelper'
 
 class QueOnda < Sinatra::Base
   register Sinatra::Flash
   enable :sessions
   set :session_secret, 'instagram for music'
   use Rack::MethodOverride
+  include SessionHelpers
 
 
   helpers do
@@ -76,6 +78,8 @@ class QueOnda < Sinatra::Base
 
   post '/password_reset' do
     flash[:notice] = "Check #{params[:email]}"
+    user = User.first(email: params[:email])
+    user.update(password_token: token_generator)
     redirect '/'
   end
 

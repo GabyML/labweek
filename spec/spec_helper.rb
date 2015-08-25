@@ -11,6 +11,7 @@ require 'factory_girl'
 require 'database_cleaner'
 require_relative './factories/user'
 require_relative './helpers/helpers'
+require_relative './models/user_spec'
 
 Capybara.app = QueOnda
 
