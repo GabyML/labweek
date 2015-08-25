@@ -11,6 +11,7 @@ ruby '2.2.2'
 	gem 'sinatra-flash'
 	gem 'sinatra-partial'
 	gem 'rack'
+	gem 'byebug'
 
 group :test do
 

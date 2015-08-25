@@ -7,6 +7,6 @@ class Onda
 	property :id, Serial
 	property :link, String
 	property :message, String
-	belongs_to :user
+	# belongs_to :user
 	has n, :tags, through: Resource
 end
