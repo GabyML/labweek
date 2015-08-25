@@ -13,3 +13,9 @@ Feature: creating Ondas
     And I am logged in
     When I make an Onda
     Then I can see an Onda
+
+  Scenario: Ondas having tags
+    Given I am on the index page
+    And I am logged in
+    When I make an Onda
+    Then I should see "#NeverGonnaGiveYouUp"

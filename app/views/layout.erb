@@ -20,6 +20,9 @@
         <input type='password' name='return_password' placeholder='here is where password go'>
         <input type='submit' value='Log In'>
       </form>
+      <form method='get' action='/users/request_password_reset'>
+        <input type='submit' value='Forgotten password?'>
+      </form>
     <% end %>
     <% if flash[:notice] %>
       <div id = "notice">

@@ -59,14 +59,23 @@ class QueOnda < Sinatra::Base
       flash[:errors] = ["You must be logged in to post an Onda"]
     else
       user = current_user
-      onda = Onda.create(link: params[:link], message: params[:message], user_id: user.id)
+      onda = Onda.new(link: params[:link], message: params[:message], user_id: user.id)
       tags = params[:tag].split(" ")
       tags.each do |tag|
         tag = Tag.create(name: tag)
         onda.tags << tag
       end
-      user.ondas << onda
+      onda.save
     end
+    redirect '/'
+  end
+
+  get "/users/request_password_reset" do
+      erb :'/users/request_password_reset'
+  end
+
+  post '/password_reset' do
+    flash[:notice] = "Check #{params[:email]}"
     redirect '/'
   end
 
