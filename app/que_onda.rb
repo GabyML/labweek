@@ -41,6 +41,7 @@ class QueOnda < Sinatra::Base
   delete '/' do
     session[:user_id] = nil
     flash[:notice] = "Bye, loser"
+    redirect '/'
   end
 
   post '/sessions/new' do
@@ -55,13 +56,17 @@ class QueOnda < Sinatra::Base
 
   post '/onda/new' do
     # byebug
-    onda = Onda.new(link: params[:link], message: params[:message])
-    tags = params[:tag].split(" ")
-    tags.each do |tag|
-      tag = Tag.create(name: tag)
-      onda.tags << tag
+    if current_user == nil
+      flash[:errors] = ["You must be logged in to post an Onda"]
+    else
+      onda = Onda.new(link: params[:link], message: params[:message])
+      tags = params[:tag].split(" ")
+      tags.each do |tag|
+        tag = Tag.create(name: tag)
+        onda.tags << tag
+      end
+      onda.save
     end
-    onda.save
     redirect '/'
   end
 

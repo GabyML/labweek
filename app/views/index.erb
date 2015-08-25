@@ -7,7 +7,7 @@
 
 
 <ul>
-<% if !@ondas.empty? %>
+<% if @ondas && !@ondas.empty? %>
   <% @ondas.reverse_each do |onda| %>
     <li>
       Rola: <%= onda.link %>

@@ -5,5 +5,7 @@ Feature: viewing ondas
 
   Scenario: QueOnda homepage shows Ondas
     Given I am on the index page
-    When I make a Onda
-    Then I can see a Onda
+    And I am logged in
+    When I make an Onda
+    Then I can see an Onda
+
