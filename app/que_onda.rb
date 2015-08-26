@@ -106,6 +106,12 @@ class QueOnda < Sinatra::Base
     erb :'/users/profile'
   end
 
+  get '/onda/:name' do
+    tag = Tag.first(name: params[:name])
+    @ondas = tag ? tag.ondas : []
+    erb :index
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
