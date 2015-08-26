@@ -1,17 +1,34 @@
 header {
   width:             100%;
-  height:            100px;
+  height:            60px;
   background-color:  #2F2A38;
   color:             #D8CFAF;
+  font-family: "phosphate";
+  font-weight: lighter;
+  display: flex;
 }
 
+.small-header {
+  font-size: 25px;
+}
+
+.button {
+  background-color: #466365;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 14px;
+}
 
 .icon {
   display: inline-block;
   vertical-align: text-bottom;
   margin: auto 20px;
+  font-size: 35px;
 }
 
+form {
+  display: inline-block;
+}
 
 li {
   display: inline;
