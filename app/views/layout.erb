@@ -8,7 +8,7 @@
 
   <body>
     <header>
-      <h1 class = "icon">QueOnda</h1>
+      <h1 class = "icon">Q<span class="small-header">ue</span>O<span class="small-header">nda</span></h1>
       <section id="user_manage">
       <% if current_user %>
           <section id="welcome">
@@ -17,20 +17,20 @@
           <section id="log_out">
             <form method='post' action='/'>
               <input type='hidden' name='_method' value='delete'>
-              <input type='submit' value='Log Out'>
+              <input class = "button" type='submit' value='Log Out'>
             </form>
           </section>
       <% else %>
         <form action="/users/new" method="get">
-          <input type="submit" value="Sign Up">
+          <input class = "button" type="submit" value="Sign Up">
         </form>
         <form method='post' action='/sessions/new'>
+          <input class = "button" type='submit' value='Log In'>
           <input type='text' name='return_username' placeholder='here is where name go'>
           <input type='password' name='return_password' placeholder='here is where password go'>
-          <input type='submit' value='Log In'>
         </form>
         <form method='get' action='/users/request_password_reset'>
-          <input type='submit' value='Forgotten password?'>
+          <input class="button" type='submit' value='Forgotten password?'>
         </form>
       <% end %>
       </section>
