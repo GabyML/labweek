@@ -68,7 +68,7 @@ Given(/^Billy creates an Onda$/) do
   click_on 'Log In'
   fill_in 'link', with: 'https://www.youtube.com/watch?v=4B2a6l6wM2k'
   fill_in 'message', with: 'Check this guy out!!!'
-  fill_in 'tag', with: '#adamant #itisapun'
+  fill_in 'tag', with: 'adamant #itisapun'
   click_on 'post'
   click_on 'Log Out'
 end
@@ -107,4 +107,8 @@ end
 
 Then(/^I should not see "([^"]*)"$/) do |arg1|
   expect(page).not_to have_content(arg1)
+end
+
+Then(/^I should be on path "([^"]*)"$/) do |arg1|
+  expect(current_path).to eq arg1
 end

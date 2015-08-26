@@ -11,10 +11,10 @@
   <% @ondas.reverse_each do |onda| %>
     <li class="Rola">
       <a href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).username %></a>:
-      <a href="<%= onda.link %>">Rola</a>
+      <a href="<%= onda.link %>">Rola.</a>
       Message: <%= onda.message %>
       Tags: <ul><% onda.tags.each do |tag|%>
-        <li><%= tag.name %></li>
+        <li><a href="/onda/<%= tag.name %>"><%= tag.name %></a></li>
       <% end %></ul>
     </li>
   <% end %>
