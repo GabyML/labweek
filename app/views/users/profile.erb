@@ -1,11 +1,3 @@
-<form action="/onda/new" method="post">
-  Rola: <input type="url" name="link">
-  <input type="text" name="message" placeholder="Why are you sharing this, m8?">
-  Genres: <input type="text" name="tag">
-  <input type="submit" value="post">
-</form>
-
-
 <ul>
 <% if @ondas && !@ondas.empty? %>
   <% @ondas.reverse_each do |onda| %>

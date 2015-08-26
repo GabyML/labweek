@@ -60,6 +60,19 @@ Given(/^Sally creates an Onda$/) do
   click_on 'Log Out'
 end
 
+Given(/^Billy creates an Onda$/) do
+  user = User.create(email: 'billy@email.com', username: 'Billy', password: '1234', password_confirmation: '1234')
+  visit '/'
+  fill_in 'return_username', with: 'Billy'
+  fill_in 'return_password', with: '1234'
+  click_on 'Log In'
+  fill_in 'link', with: 'https://www.youtube.com/watch?v=4B2a6l6wM2k'
+  fill_in 'message', with: 'Check this guy out!!!'
+  fill_in 'tag', with: '#adamant #itisapun'
+  click_on 'post'
+  click_on 'Log Out'
+end
+
 When(/^I click the "([^"]*)" button$/) do |arg1|
   click_on arg1
 end
@@ -76,7 +89,7 @@ When(/^I make an Onda$/) do
 end
 
 When(/^I click on "([^"]*)"$/) do |arg1|
-  click_on 'Rola'
+  click_on arg1
 end
 
 Then(/^I should see "([^"]*)"$/) do |arg1|
@@ -89,4 +102,9 @@ end
 
 Then(/^I should visit "([^"]*)"$/) do |arg1|
   expect(current_url).to eq(arg1)
+end
+
+
+Then(/^I should not see "([^"]*)"$/) do |arg1|
+  expect(page).not_to have_content(arg1)
 end
