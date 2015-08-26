@@ -9,9 +9,10 @@ Feature: filtering ondas
     And I visit index page
     When I click on "Sally"
     Then I should see "Sally's profile"
+    And I should see "I just love life!"
     But I should not see "Billy"
 
-    Scenario: filtering by tags
+  Scenario: filtering by tags
     Given Sally creates an Onda
     And Billy creates an Onda
     And I visit index page

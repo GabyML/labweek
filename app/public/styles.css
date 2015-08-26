@@ -13,7 +13,7 @@ header {
 }
 
 .small-header {
-  font-size: 25px;
+  font-size: 27px;
 }
 
 .button {
@@ -29,6 +29,11 @@ header {
   vertical-align: text-bottom;
   margin: auto 20px;
   font-size: 35px;
+}
+
+
+h1 {
+  font-family: "phosphate";
 }
 
 form {

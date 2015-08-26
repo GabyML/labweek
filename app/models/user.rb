@@ -13,6 +13,7 @@ class User
 	property :username, String, required: true
 	property :password_digest, Text, lazy: false
 	property :password_token, Text, lazy: false
+	property :bio, Text
 
   has n, :ondas
 
