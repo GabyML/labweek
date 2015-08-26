@@ -89,10 +89,8 @@ class QueOnda < Sinatra::Base
   end
 
   post '/password_reset' do
-    # byebug
     user = User.first(password_token: session[:token])
-    user.password=(params[:new_password])
-    user.save
+    user.update(password: params[:new_password], password_confirmation: params[:new_password_confirmation], password_token: nil)
     redirect '/'
   end
 
