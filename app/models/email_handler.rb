@@ -23,7 +23,7 @@ class EmailHandler
 #
 #
   def send_something
-    RestClient.post "AAAAAAARGH"\
+    RestClient.post ENV[MAILGUN_API_KEY]\
     "@api.mailgun.net/v3/app7011b045d8f54d40b446c0f08284cb16.mailgun.org/messages",
     :from => "Excited User <mailgun@app7011b045d8f54d40b446c0f08284cb16.mailgun.org>",
     :to => "chris alcock <#{@user.email}>",
