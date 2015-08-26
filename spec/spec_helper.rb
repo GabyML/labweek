@@ -12,6 +12,7 @@ require 'database_cleaner'
 require_relative './factories/user'
 require_relative './helpers/helpers'
 require_relative './models/user_spec'
+require_relative './models/email_handler_spec'
 
 Capybara.app = QueOnda
 
