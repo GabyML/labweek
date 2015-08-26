@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Que Onda</title>
+    <title>QueOnda</title>
     <link rel="stylesheet" href ="/normalise.css" type='text/css'>
     <link rel="stylesheet" href ="/styles.css" type='text/css'>
   </head>
 
   <body>
     <header>
-      <h1>QueOnda</h1>
+      <h1 class = "icon">QueOnda</h1>
+      <section id="user_manage">
       <% if current_user %>
-        <section id="user_manage">
           <section id="welcome">
             Welcome, <%= current_user.username %>
           </section>
@@ -20,7 +20,6 @@
               <input type='submit' value='Log Out'>
             </form>
           </section>
-        </section>
       <% else %>
         <form action="/users/new" method="get">
           <input type="submit" value="Sign Up">
@@ -34,7 +33,9 @@
           <input type='submit' value='Forgotten password?'>
         </form>
       <% end %>
+      </section>
     </header>
+    <main>
     <% if flash[:notice] %>
       <div id = "notice">
         <%= flash[:notice] %>
@@ -48,5 +49,6 @@
       </ul>
     <% end %>
     <%= yield %>
+    </main>
   </body>
 </html>

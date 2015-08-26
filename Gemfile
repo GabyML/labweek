@@ -12,6 +12,7 @@ ruby '2.2.2'
 	gem 'sinatra-partial'
 	gem 'rack'
 	gem 'byebug'
+	gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
 
 group :test do
 

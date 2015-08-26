@@ -6,12 +6,24 @@ header {
 }
 
 
+.icon {
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin: auto 20px;
+}
+
+
 li {
   display: inline;
 }
 
 body {
   background-color: #D2E1E4;
+}
+
+main {
+  padding: 50px;
+  text-align: center;
 }
 
 #user_manage {
