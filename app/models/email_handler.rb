@@ -23,12 +23,7 @@ class EmailHandler
 #
 #
   def send_something
-<<<<<<< HEAD
-    RestClient.post ENV[MAILGUN_API_KEY]\
-=======
-    RestClient.post "MAILGUN_API_KEY"\
->>>>>>> 3a7140183dc40d63d7f319c822a45a4c07555740
-    "@api.mailgun.net/v3/app7011b045d8f54d40b446c0f08284cb16.mailgun.org/messages",
+    RestClient.post ENV[MAILGUN_API_KEY]\"@api.mailgun.net/v3/app7011b045d8f54d40b446c0f08284cb16.mailgun.org/messages",
     :from => "Excited User <mailgun@app7011b045d8f54d40b446c0f08284cb16.mailgun.org>",
     :to => "chris alcock <#{@user.email}>",
     :subject => "Hello",
