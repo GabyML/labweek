@@ -13,6 +13,7 @@ ruby '2.2.2'
 	gem 'rack'
 	gem 'byebug'
 	gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
+	gem 'mail'
 
 group :test do
 
