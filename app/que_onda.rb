@@ -101,11 +101,10 @@ class QueOnda < Sinatra::Base
   end
 
   get '/users/:username' do
-    user = User.first(username: params[:username])
-    @ondas = user ? user.ondas : []
+    @user = User.first(username: params[:username])
+    @ondas = @user ? @user.ondas : []
     erb :'/users/profile'
   end
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0

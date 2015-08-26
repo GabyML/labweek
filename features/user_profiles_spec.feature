@@ -8,5 +8,5 @@ Feature: seeing all Ondas from one user
     And Billy creates an Onda
     And I visit index page
     When I click on "Sally"
-    Then I should see "Sally"
+    Then I should see "Sally's profile"
     But I should not see "Billy"
