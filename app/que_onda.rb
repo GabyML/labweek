@@ -3,8 +3,11 @@ require 'sinatra/flash'
 require './data_mapper_setup'
 require 'byebug'
 require './app/helper/sessionHelper'
+require 'mailgun'
+require_relative 'models/email_handler'
 
 class QueOnda < Sinatra::Base
+  mg_client = Mailgun::Client.new "key-99d039c5b7fb15d2daf788798677fa15"
   register Sinatra::Flash
   enable :sessions
   set :session_secret, 'instagram for music'
@@ -80,6 +83,9 @@ class QueOnda < Sinatra::Base
     flash[:notice] = "Check #{params[:email]}"
     user = User.first(email: params[:email])
     user.update(password_token: token_generator)
+    email_handler = EmailHandler.new(user, mg_client)
+    # email_handler.call
+    email_handler.send_something
     redirect '/'
   end
 
