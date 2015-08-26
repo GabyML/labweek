@@ -28,7 +28,7 @@ class EmailHandler
     :from => "Excited User <mailgun@app7011b045d8f54d40b446c0f08284cb16.mailgun.org>",
     :to => "chris alcock <#{@user.email}>",
     :subject => "Hello",
-    :text => "You have requested a password reset/ Follow this link to continue: http://www.queondavip.herokuapp.com/#{@user.password_token}"
+    :text => "You have requested a password reset/ Follow this link to continue: http://queondavip.herokuapp.com/#{@user.password_token}"
   end
 
 
