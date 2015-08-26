@@ -14,4 +14,9 @@ Feature: viewing ondas
     And I am on the index page
     Then I should see "Sally:"
 
+  Scenario: My Ondas link to the song 
+    Given Sally creates an Onda
+    When I click on "Rola" 
+    Then I should visit "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+
 

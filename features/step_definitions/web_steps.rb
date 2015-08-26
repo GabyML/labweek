@@ -75,10 +75,18 @@ When(/^I make an Onda$/) do
   click_on 'post'
 end
 
+When(/^I click on "([^"]*)"$/) do |arg1|
+  click_on 'Rola'
+end
+
 Then(/^I should see "([^"]*)"$/) do |arg1|
   expect(page).to have_content(arg1)
 end
 
 Then(/^I can see an Onda$/) do
   expect(page).to have_content('My Onda')
+end
+
+Then(/^I should visit "([^"]*)"$/) do |arg1|
+  expect(current_url).to eq(arg1)
 end

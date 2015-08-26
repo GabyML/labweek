@@ -9,9 +9,9 @@
 <ul>
 <% if @ondas && !@ondas.empty? %>
   <% @ondas.reverse_each do |onda| %>
-    <li>
+    <li class="Rola">
       <%= User.get(onda.user_id).username %>:
-      Rola: <%= onda.link %>
+      <a href="<%= onda.link %>">Rola</a>
       Message: <%= onda.message %>
       Tags: <ul><% onda.tags.each do |tag|%>
         <li><%= tag.name %></li>
