@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>QueOnda</title>
+    <script type="text/javascript" src="app/lib/jquery.js"></script>
     <link rel="stylesheet" href ="/normalise.css" type='text/css'>
     <link rel="stylesheet" href ="/styles.css" type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/jquery.emojipicker.css">
+    <link rel="stylesheet" type="text/css" href="/jquery.emojipicker.a.css">
   </head>
 
   <body>
@@ -15,5 +19,23 @@
     <%= partial :flash %>
     <%= yield %>
     </main>
+
+
   </body>
+
+
+  <script type="text/javascript" src="app/src/jquery.emojipicker.js"></script>
+
+  <!-- Emoji Data -->
+  <script type="text/javascript" src="app/src/jquery.emojipicker.a.js"></script>
+
+  <script type="text/javascript">
+    $('.emoji').emojiPicker({
+      height: '300px',
+      width: '450px'
+    });
+  </script>
+
+
+
 </html>
