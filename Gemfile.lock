@@ -169,7 +169,9 @@ DEPENDENCIES
   cucumber-sinatra
   data_mapper
   database_cleaner
+  dm-core
   dm-postgres-adapter
+  dm-timestamps
   dm-transactions
   factory_girl
   mail

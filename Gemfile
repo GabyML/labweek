@@ -14,7 +14,6 @@ ruby '2.2.2'
 	gem 'byebug'
 	gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
 	gem 'mail'
-	gem 'rubygems'
 	gem 'dm-core'
 	gem 'dm-timestamps'
 
