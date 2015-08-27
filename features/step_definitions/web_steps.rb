@@ -56,6 +56,8 @@ Given(/^Sally creates an Onda$/) do
   fill_in 'link', with: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
   fill_in 'message', with: 'My Onda'
   fill_in 'tag', with: '#NeverGonnaGiveYouUp'
+  fill_in 'artist', with: 'Rick Astley'
+  fill_in 'song', with: 'Never gonna give you up'
   click_on 'post'
   click_on 'Log Out'
 end
@@ -69,6 +71,8 @@ Given(/^Billy creates an Onda$/) do
   fill_in 'link', with: 'https://www.youtube.com/watch?v=4B2a6l6wM2k'
   fill_in 'message', with: 'Check this guy out!!!'
   fill_in 'tag', with: 'adamant #itisapun'
+  fill_in 'artist', with: 'adamant'
+  fill_in 'song', with: 'Stand And Deliver'
   click_on 'post'
   click_on 'Log Out'
 end
@@ -85,6 +89,8 @@ When(/^I make an Onda$/) do
   fill_in 'link', with: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
   fill_in 'message', with: 'My Onda'
   fill_in 'tag', with: '#NeverGonnaGiveYouUp'
+  fill_in 'artist', with: 'Rick Astley'
+  fill_in 'song', with: 'Never gonna give you up'
   click_on 'post'
 end
 

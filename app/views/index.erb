@@ -2,6 +2,8 @@
   Rola: <input type="url" name="link">
   <input type="text" name="message" placeholder="Why are you sharing this, m8?">
   Genres: <input type="text" name="tag">
+  Artist: <input type="text" name="artist">
+  Song: <input type="text" name="song">
   <input type="submit" value="post">
 </form>
 
@@ -12,6 +14,8 @@
     <li class="Rola">
       <a href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).username %></a>:
       <a href="<%= onda.link %>">Rola.</a>
+      Song: <%= onda.song %>
+      Artist: <%= onda.artist %>
       Message: <%= onda.message %>
       Tags: <ul><% onda.tags.each do |tag|%>
         <li><a href="/onda/<%= tag.name %>"><%= tag.name %></a></li>
