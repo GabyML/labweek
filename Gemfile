@@ -14,6 +14,9 @@ ruby '2.2.2'
 	gem 'byebug'
 	gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
 	gem 'mail'
+	gem 'rubygems'
+	gem 'dm-core'
+	gem 'dm-timestamps'
 
 group :test do
 
@@ -23,5 +26,6 @@ group :test do
 	gem 'factory_girl'
 	gem 'rspec'
 	gem 'rspec-sinatra'
+	gem 'timecop'
 
 end

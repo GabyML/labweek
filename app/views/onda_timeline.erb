@@ -9,6 +9,7 @@
         Artist: <%= onda.artist %>
         Message: <%= onda.message %>
         Tags: <ul class="tag-container"><% onda.tags.each do |tag|%><li class="tags"><a class="tag-text" href="/onda/<%= tag.name %>"><%= tag.name %></a></li>
+        Posted: <%= onda.time.strftime("at %I:%M%p on %e/%m/%y") %>
         <% end %></ul>
       </li>
       </section>

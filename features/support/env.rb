@@ -8,6 +8,7 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
 require 'tilt/erb'
+require 'timecop'
 
 Capybara.app = QueOnda
 

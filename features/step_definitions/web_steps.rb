@@ -77,6 +77,11 @@ Given(/^Billy creates an Onda$/) do
   click_on 'Log Out'
 end
 
+Given(/^it is "([^"]*)"$/) do |arg1|
+  Timecop.freeze(2015, 8, 27, 12, 0, 0, "+01:00")
+end
+
+
 When(/^I click the "([^"]*)" button$/) do |arg1|
   click_on arg1
 end

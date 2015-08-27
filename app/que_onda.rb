@@ -5,6 +5,9 @@ require 'byebug'
 require './app/helper/sessionHelper'
 require 'mailgun'
 require 'sinatra/partial'
+require 'rubygems'
+require 'dm-core'
+require 'dm-timestamps'
 require_relative 'models/email_handler'
 
 class QueOnda < Sinatra::Base
@@ -67,7 +70,7 @@ class QueOnda < Sinatra::Base
       flash[:errors] = ["You must be logged in to post an Onda"]
     else
       user = current_user
-      onda = Onda.new(link: params[:link], artist: params[:artist], song: params[:song], message: params[:message], user_id: user.id)
+      onda = Onda.new(link: params[:link], artist: params[:artist], song: params[:song], message: params[:message], user_id: user.id, time: Time.now)
       tags = params[:tag].split(" ")
       tags.each do |tag|
         tag = Tag.create(name: tag)
