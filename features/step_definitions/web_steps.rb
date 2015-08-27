@@ -77,10 +77,14 @@ Given(/^Billy creates an Onda$/) do
   click_on 'Log Out'
 end
 
+Given(/^I am on the profile page of "([^"]*)"$/) do |arg1|
+  user = User.create(email: 'sally@email.com', username: 'Sally', password: '1234', password_confirmation: '1234', bio: 'I just love life!')
+  visit "/users/#{arg1}"
+end
+
 Given(/^it is "([^"]*)"$/) do |arg1|
   Timecop.freeze(2015, 8, 27, 12, 0, 0, "+01:00")
 end
-
 
 When(/^I click the "([^"]*)" button$/) do |arg1|
   click_on arg1
