@@ -6,6 +6,7 @@
         <a class="user_emoji" href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).emoji %></a>
         <a href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).username %></a>:
         <a href="<%= onda.link %>">Rola.</a><br />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= (onda.link.slice(32..-1)) %>" frameborder="0" allowfullscreen></iframe>
         Song: <%= onda.song %>
         Artist: <%= onda.artist %>
         Message: <%= onda.message %>
