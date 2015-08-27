@@ -48,7 +48,7 @@ Given(/^that I am not logged in$/) do
 end
 
 Given(/^Sally creates an Onda$/) do
-  user = User.create(email: 'sally@email.com', username: 'Sally', password: '1234', password_confirmation: '1234')
+  user = User.create(email: 'sally@email.com', username: 'Sally', password: '1234', password_confirmation: '1234', bio: 'I just love life!')
   visit '/'
   fill_in 'return_username', with: 'Sally'
   fill_in 'return_password', with: '1234'

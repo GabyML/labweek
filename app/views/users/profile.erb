@@ -1,5 +1,7 @@
 <ul>
 <% if @ondas && !@ondas.empty? %>
+  <h1><%= @user.username %>'s profile</h1>
+  <h2> They are <%= @user.bio ? @user.bio : "Very mysterious"  %></h2>
   <% @ondas.reverse_each do |onda| %>
     <li class="Rola">
       <a href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).username %></a>:

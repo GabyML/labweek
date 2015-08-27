@@ -10,6 +10,7 @@ Feature: signing up to QueOnda
     And I should see "Enter your email"
     And I should see "Choose a password"
     And I should see "Confirm your password"
+    And I should see "Bio"
 
   Scenario: completing signup
     Given I visit the sign up page

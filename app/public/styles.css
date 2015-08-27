@@ -37,6 +37,11 @@ ul {
   font-family: "phosphate", arial, sans-serif;
 }
 
+
+h1 {
+  font-family: "phosphate";
+}
+
 form {
   display: inline-block;
 }
@@ -46,6 +51,7 @@ li {
 }
 
 body {
+
   background-color: #D2E1E4;
 }
 
