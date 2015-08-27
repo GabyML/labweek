@@ -6,6 +6,8 @@
     <li class="Rola">
       <a href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).username %></a>:
       <a href="<%= onda.link %>">Rola</a>
+      Song: <%= onda.song %>
+      Artist: <%= onda.artist %>
       Message: <%= onda.message %>
       Tags: <ul><% onda.tags.each do |tag|%>
         <li><%= tag.name %></li>

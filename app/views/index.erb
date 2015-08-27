@@ -1,10 +1,11 @@
-<section class="new-post">
-  <form action="/onda/new" method="post">
-    Rola: <input class="new-post-input" type="url" name="link">
-    <input class="new-post-input" type="text" name="message" placeholder="Why are you sharing this, m8?">
-    Genres: <input class="new-post-input" type="text" name="tag">
-    <input type="submit" value="post">
-  </form>
+<form action="/onda/new" method="post">
+  Rola: <input type="url" name="link">
+  <input type="text" name="message" placeholder="Why are you sharing this, m8?">
+  Genres: <input type="text" name="tag">
+  Artist: <input type="text" name="artist">
+  Song: <input type="text" name="song">
+  <input type="submit" value="post">
+</form>
 </section>
 
 
@@ -15,6 +16,8 @@
     <li class="Rola">
       <a href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).username %></a>:
       <a href="<%= onda.link %>">Rola.</a><br />
+      Song: <%= onda.song %>
+      Artist: <%= onda.artist %>
       Message: <%= onda.message %>
       Tags: <ul class="tag-container"><% onda.tags.each do |tag|%><li class="tags"><a class="tag-text" href="/onda/<%= tag.name %>"><%= tag.name %></a></li>
       <% end %></ul>
