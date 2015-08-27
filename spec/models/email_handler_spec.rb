@@ -11,6 +11,6 @@ describe EmailHandler do
       to: user.email,
       message: "You have requested a password reset/ Follow this link to continue:
       http://www.queondavip.herokuapp.com/#{user.password_token}")
-    subject.call
+    subject.send_something
   end
 end

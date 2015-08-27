@@ -107,7 +107,7 @@ class QueOnda < Sinatra::Base
   end
 
   get '/onda/:name' do
-    tag = Tag.first(name: params[:name])
+    tag = Tag.all(name: params[:name])
     @ondas = tag ? tag.ondas : []
     erb :index
   end
