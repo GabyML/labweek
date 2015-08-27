@@ -1,0 +1,17 @@
+<ul>
+  <% if @ondas && !@ondas.empty? %>
+    <% @ondas.reverse_each do |onda| %>
+      <section class="post">
+      <li class="Rola">
+        <a href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).username %></a>:
+        <a href="<%= onda.link %>">Rola.</a><br />
+        Song: <%= onda.song %>
+        Artist: <%= onda.artist %>
+        Message: <%= onda.message %>
+        Tags: <ul class="tag-container"><% onda.tags.each do |tag|%><li class="tags"><a class="tag-text" href="/onda/<%= tag.name %>"><%= tag.name %></a></li>
+        <% end %></ul>
+      </li>
+      </section>
+    <% end %>
+  <% end %>
+</ul>

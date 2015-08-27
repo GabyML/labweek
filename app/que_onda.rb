@@ -4,13 +4,16 @@ require './data_mapper_setup'
 require 'byebug'
 require './app/helper/sessionHelper'
 require 'mailgun'
+require 'sinatra/partial'
 require_relative 'models/email_handler'
 
 class QueOnda < Sinatra::Base
   mg_client = Mailgun::Client.new "key-99d039c5b7fb15d2daf788798677fa15"
   register Sinatra::Flash
+  register Sinatra::Partial
   enable :sessions
   set :session_secret, 'instagram for music'
+  set :partial_template_engine, :erb
   use Rack::MethodOverride
   include SessionHelpers
 

@@ -9,45 +9,10 @@
   <body>
     <header>
       <h1 class = "icon">Q<span class="small-header">ue</span>O<span class="small-header">nda</span></h1>
-      <section id="user_manage">
-      <% if current_user %>
-          <section id="welcome">
-            Welcome, <%= current_user.username %>
-          </section>
-          <section id="log_out">
-            <form method='post' action='/'>
-              <input type='hidden' name='_method' value='delete'>
-              <input class = "button" type='submit' value='Log Out'>
-            </form>
-          </section>
-      <% else %>
-        <form action="/users/new" method="get">
-          <input class = "button" type="submit" value="Sign Up">
-        </form>
-        <form method='post' action='/sessions/new'>
-          <input class = "button" type='submit' value='Log In'>
-          <input type='text' name='return_username' placeholder='here is where name go'>
-          <input type='password' name='return_password' placeholder='here is where password go'>
-        </form>
-        <form method='get' action='/users/request_password_reset'>
-          <input class="button" type='submit' value='Forgotten password?'>
-        </form>
-      <% end %>
-      </section>
+      <%= partial :user_management %>
     </header>
     <main>
-    <% if flash[:notice] %>
-      <div id = "notice">
-        <%= flash[:notice] %>
-      </div>
-      <% end %>
-    <% if flash[:errors] && !flash[:errors].empty? %>
-      <ul id='errors'>
-        <% flash[:errors].each do |error| %>
-          <li><%= error %></li>
-        <% end %>
-      </ul>
-    <% end %>
+    <%= partial :flash %>
     <%= yield %>
     </main>
   </body>
