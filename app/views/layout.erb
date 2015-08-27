@@ -3,7 +3,7 @@
 
   <head>
     <title>QueOnda</title>
-    <script type="text/javascript" src="app/lib/jquery.js"></script>
+    <script type="text/javascript" src="/javascript/jquery.js"></script>
     <link rel="stylesheet" href ="/normalise.css" type='text/css'>
     <link rel="stylesheet" href ="/styles.css" type='text/css'>
     <link rel="stylesheet" type="text/css" href="/jquery.emojipicker.css">
@@ -24,15 +24,37 @@
   </body>
 
 
-  <script type="text/javascript" src="app/src/jquery.emojipicker.js"></script>
+  <script type="text/javascript" src="/javascript/jquery.emojipicker.js"></script>
 
   <!-- Emoji Data -->
-  <script type="text/javascript" src="app/src/jquery.emojipicker.a.js"></script>
+  <script type="text/javascript" src="/javascript/jquery.emojipicker.a.js"></script>
 
   <script type="text/javascript">
     $('.emoji').emojiPicker({
       height: '300px',
       width: '450px'
+    });
+  </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(e) {
+
+      $('.emojiable-question').emojiPicker({
+        width: '300px',
+        height: '200px',
+        button: false
+      });
+
+      $('.emojiable-option').emojiPicker({
+        width: '200px',
+        height: '100px'
+      });
+
+      $('#trigger').click(function(e) {
+        e.preventDefault();
+        $('#question').emojiPicker('toggle');
+      });
+
     });
   </script>
 

@@ -3,7 +3,7 @@
     <% @ondas.reverse_each do |onda| %>
       <section class="post">
       <li class="Rola">
-        <a class="emoji" href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).emoji %></a>
+        <a class="user_emoji" href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).emoji %></a>
         <a href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).username %></a>:
         <a href="<%= onda.link %>">Rola.</a><br />
         Song: <%= onda.song %>
