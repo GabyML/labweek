@@ -14,6 +14,11 @@ Feature: viewing ondas
     And I am on the index page
     Then I should see "Sally:"
 
+  Scenario: can see user's profile emoji
+    Given Sally creates an Onda
+    And I am on the index page
+    Then I should see "👸"
+
   Scenario: My Ondas link to the song
     Given Sally creates an Onda
     When I click on "Rola"

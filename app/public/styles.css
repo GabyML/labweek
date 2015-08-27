@@ -107,6 +107,10 @@ main {
   border-radius: 10%;
 }
 
+.emoji {
+  font-size: 100px;
+}
+
 
 #welcome {
 }
@@ -121,3 +125,4 @@ main {
   float: right;
   margin: auto 20px;
 }
+

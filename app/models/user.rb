@@ -14,6 +14,7 @@ class User
 	property :password_digest, Text, lazy: false
 	property :password_token, Text, lazy: false
 	property :bio, Text
+  property :emoji, Text, lazy: false
 
   has n, :ondas
 
