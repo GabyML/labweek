@@ -13,6 +13,11 @@ header {
 a {
   text-decoration: none;
 }
+
+a:visited {
+  color: ;
+}
+
 .small-header {
   font-size: 40px;
 }
@@ -34,7 +39,7 @@ ul {
   vertical-align: text-bottom;
   margin: auto 20px;
   font-size: 45px;
-  font-family: "phosphate", arial, sans-serif;
+  font-family: "phosphate", "avenirnext-heavy", sans-serif;
   color: rgb(216, 207, 175);
 }
 
