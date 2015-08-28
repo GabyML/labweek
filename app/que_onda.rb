@@ -39,7 +39,7 @@ class QueOnda < Sinatra::Base
 
   post '/users' do
     @emo = params[:emoji]
-    @emo.length > 1 ? @emo = @emo[1..2] : @emo = @emo[1]
+    @emo.length > 1 ? @emo = @emo[0..1] : @emo = @emo[0]
     user = User.create(email: params[:email], username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation], bio: params[:bio], emoji: @emo)
     if user.save
       session[:user_id] = user.id
