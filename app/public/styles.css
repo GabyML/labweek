@@ -22,6 +22,26 @@ a:visited {
   color: ;
 }
 
+/*li {
+  display: inline;
+}*/
+
+.rola-info {
+  position: relative;
+  top: 50%;
+  display:inline-block;
+  transform: translateY(-50%);
+  padding-right: 10px;
+}
+
+.rola-info-text {
+  display: block;
+}
+
+.video-container {
+  display:inline-block;
+}
+
 .small-header {
   font-size: 40px;
 }
@@ -56,10 +76,6 @@ form {
   display: inline-block;
 }
 
-li {
-  display: inline;
-}
-
 body {
 
   background-color: #D2E1E4;
@@ -67,7 +83,8 @@ body {
 
 main {
   margin-top: 60px;
-  padding:0 150px;
+  width: 50%;
+  margin: auto;
   text-align: center;
 }
 

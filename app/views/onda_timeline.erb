@@ -2,18 +2,24 @@
   <% if @ondas && !@ondas.empty? %>
     <% @ondas.reverse_each do |onda| %>
       <section class="post">
-      <li class="Rola">
-        <a class="user_emoji" href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).emoji %></a>
-        <a href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).username %></a>:
-        <a href="<%= onda.link %>">Rola.</a><br />
-        <iframe class="video-player" width="560" height="315" src="https://www.youtube.com/embed/<%= (onda.link.slice(32..-1)) %>" frameborder="0" allowfullscreen></iframe>
-        Song: <%= onda.song %>
-        Artist: <%= onda.artist %>
-        Message: <%= onda.message %>
-        <ul class="tag-container"><% onda.tags.each do |tag|%><li class="tags"><a class="tag-text" href="/onda/<%= tag.name %>"><%= tag.name %></a></li>
-        <% end %></ul>
-        Posted: <%= onda.time.strftime("at %I:%M%p on %e/%m/%y") %>
-      </li>
+        <li class="rola">
+          <section class="rola-info">
+            <a class="user_emoji" href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).emoji %></a>
+            <a href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).username %></a>:
+            <a href="<%= onda.link %>">Rola.</a><br />
+            <ul class="rola-info-text">
+              <li>Song: <%= onda.song %></li>
+              <li>Artist: <%= onda.artist %></li>
+              <li>Message: <%= onda.message %></li>
+              <li>Posted: <%= onda.time.strftime("at %I:%M%p on %e/%m/%y") %></li>
+            </ul>
+            <ul class="tag-container"><% onda.tags.each do |tag|%><li class="tags"><a class="tag-text" href="/onda/<%= tag.name %>"><%= tag.name %></a></li>
+            <% end %></ul>
+          </section>
+          <section class="video-container">
+            <iframe class="video-player" width="560" height="315" src="https://www.youtube.com/embed/<%= (onda.link.slice(32..-1)) %>" frameborder="0" allowfullscreen></iframe>
+          </section>
+        </li>
       </section>
     <% end %>
   <% end %>
