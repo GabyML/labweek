@@ -37,11 +37,11 @@ class QueOnda < Sinatra::Base
     erb :'/users/new'
   end
 
-  post '/' do
+  post '/users' do
     user = User.create(email: params[:email], username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation], bio: params[:bio], emoji: params[:emoji])
     if user.save
       session[:user_id] = user.id
-      erb :index
+      redirect '/'
     else
       flash.now[:errors] = user.errors.full_messages
       erb :'/users/new'

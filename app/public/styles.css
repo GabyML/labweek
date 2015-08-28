@@ -111,6 +111,11 @@ main {
   font-size: 100px;
 }
 
+.video-player {
+  display: block;
+  margin: auto;
+}
+
 
 #welcome {
 }
