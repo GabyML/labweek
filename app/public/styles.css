@@ -131,3 +131,22 @@ main {
   margin: auto 20px;
 }
 
+.sign-up-form {
+  height: 30px;
+  line-height: normal;
+  display: block;
+  text-align: center;
+  margin: 5px auto 15px;
+  width: 400px;
+}
+
+.emojiPickerIconWrap {
+  display:block;
+}
+
+.emojiable-option {
+  display: block;
+  width: 400px;
+  height: 30px;
+}
+
