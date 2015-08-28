@@ -1,9 +1,9 @@
-describe('Thermostat Features',function(){
-	// var thermostat = new Thermostat();
-  // setup test server - localhost9292
+describe('QueOnda Features',function(){
+
+
   beforeEach(function() {
     jasmine.getFixtures().fixturesPath = ".";
-    loadFixtures("Thermostat.html");
+    // loadFixtures("Thermostat.html");
     $.holdReady(false);
   });
 

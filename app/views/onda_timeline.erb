@@ -4,10 +4,9 @@
       <section class="post">
         <li class="rola">
           <section class="rola-info">
-            <a class="user_emoji" href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).emoji %></a>
-            <a href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).username %></a>:
-            <a href="<%= onda.link %>">Rola.</a><br />
             <ul class="rola-info-text">
+              <li><a class="user_emoji" href="/users/<%= User.get(onda.user_id).username %>"><%= User.get(onda.user_id).emoji %></a></li>
+              <li><a href="/users/<%= User.get(onda.user_id).username %>"><h3><%= User.get(onda.user_id).username %></h3></a></li>
               <li>Song: <%= onda.song %></li>
               <li>Artist: <%= onda.artist %></li>
               <li>Message: <%= onda.message %></li>

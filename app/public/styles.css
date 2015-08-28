@@ -30,12 +30,14 @@ a:visited {
   position: relative;
   top: 50%;
   display:inline-block;
-  transform: translateY(-50%);
+  transform: translateY(-35%);
   padding-right: 10px;
 }
 
 .rola-info-text {
+  list-style-type: none;
   display: block;
+  text-align: justify;
 }
 
 .video-container {
@@ -55,6 +57,7 @@ a:visited {
 }
 
 ul {
+  list-style-type: none;
   padding: 0;
 }
 
@@ -69,8 +72,14 @@ ul {
 
 
 h1 {
-  font-family: "phosphate";
+  font-family: "phosphate", "avenirnext-heavy", sans-serif;
 }
+
+h3 {
+  margin: 0;
+  font-family: "phosphate", "avenirnext-heavy", sans-serif;
+}
+
 
 form {
   display: inline-block;
@@ -82,9 +91,8 @@ body {
 }
 
 main {
-  margin-top: 60px;
   width: 50%;
-  margin: auto;
+  margin: 60px auto 0;
   text-align: center;
 }
 
@@ -152,7 +160,7 @@ main {
   margin: auto 20px;
 }
 
-.sign-up-form {
+.sign-up-field {
   height: 30px;
   line-height: normal;
   display: block;
@@ -160,6 +168,11 @@ main {
   margin: 5px auto 15px;
   width: 400px;
 }
+
+#sign-up-form {
+  padding-top: 10px;
+}
+
 
 .emojiPickerIconWrap {
   display:block;
@@ -170,4 +183,3 @@ main {
   width: 400px;
   height: 30px;
 }
-
