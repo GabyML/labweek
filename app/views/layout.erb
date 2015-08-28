@@ -28,35 +28,7 @@
 
   <!-- Emoji Data -->
   <script type="text/javascript" src="/javascript/jquery.emojipicker.a.js"></script>
-
-  <script type="text/javascript">
-    $('.emoji').emojiPicker({
-      height: '300px',
-      width: '450px'
-    });
-  </script>
-
-    <script type="text/javascript">
-    $(document).ready(function(e) {
-
-      $('.emojiable-question').emojiPicker({
-        width: '300px',
-        height: '200px',
-        button: false
-      });
-
-      $('.emojiable-option').emojiPicker({
-        width: '200px',
-        height: '100px'
-      });
-
-      $('#trigger').click(function(e) {
-        e.preventDefault();
-        $('#question').emojiPicker('toggle');
-      });
-
-    });
-  </script>
+  <script type="text/javascript" src="/javascript/emoji.js"></script>
 
 
 
