@@ -38,7 +38,9 @@ class QueOnda < Sinatra::Base
   end
 
   post '/users' do
-    user = User.create(email: params[:email], username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation], bio: params[:bio], emoji: params[:emoji])
+    @emo = params[:emoji]
+    @emo.length > 1 ? @emo[1..2] : @emo[1]
+    user = User.create(email: params[:email], username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation], bio: params[:bio], emoji: @emo)
     if user.save
       session[:user_id] = user.id
       redirect '/'
