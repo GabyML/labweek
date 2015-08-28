@@ -12,17 +12,9 @@ Feature: viewing ondas
   Scenario: can see which user created each Onda
     Given Sally creates an Onda
     And I am on the index page
-    Then I should see "Sally:"
+    Then I should see "Sally"
 
   Scenario: can see user's profile emoji
     Given Sally creates an Onda
     And I am on the index page
     Then I should see "👸"
-
-  Scenario: My Ondas link to the song
-    Given Sally creates an Onda
-    When I click on "Rola"
-    Then I should visit "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-
-
-
